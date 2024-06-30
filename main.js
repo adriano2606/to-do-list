@@ -15,7 +15,7 @@ inputFilter.addEventListener('input', () => {
         if (labelContent.toLowerCase().includes(inputFilterValue.toLowerCase())){
 
             lis[index].classList.remove("d-none")
-            
+
             label[index].innerHTML = labelContent.replace(new RegExp(`${inputFilterValue}`,"gi"),(match) => {
                 return `<strong>${match}</strong>`
 
@@ -28,7 +28,7 @@ inputFilter.addEventListener('input', () => {
 
 function newItem(text){
     return `
-    <li class=" item-todo list-group-item d-flex align-items-center px-3 position-relative">
+    <li class=" item-todo list-group-item bg-my-dark d-flex align-items-center px-3 position-relative">
       <div class="d-flex align-items-center ms-2">
         <input class="form-check-input" type="checkbox">
         <label class="content form-check-label text-break ps-3 pe-5 task-description">${text}</label>

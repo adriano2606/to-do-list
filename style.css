@@ -3,7 +3,7 @@
     cursor: pointer;
 }
 
-li:hover{
+li:hover, li div label{
     cursor: pointer;
     filter: brightness(90%);
 }
@@ -11,4 +11,10 @@ li:hover{
 .deleteIcon{
     position: absolute;
     right: 20px;
+}
+
+.bg-my-dark {
+    background-color: #323436;
+    border: none;
+    color: white;
 }
