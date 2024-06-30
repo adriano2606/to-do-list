@@ -1,0 +1,14 @@
+.deleteIcon:hover{
+    color: red;
+    cursor: pointer;
+}
+
+li:hover{
+    cursor: pointer;
+    filter: brightness(90%);
+}
+
+.deleteIcon{
+    position: absolute;
+    right: 20px;
+}
