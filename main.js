@@ -2,28 +2,8 @@ const taskInputField = document.getElementById('taskInput')
 const taskAddButton = document.getElementById('taskAddButton')
 const inputFilter = document.getElementById("inputFilter")
 
-inputFilter.addEventListener('input', (e) => {
-    const lis = document.getElementsByClassName('item-todo')
-    const label = document.getElementsByClassName("content")
-    const inputFilterValue = inputFilter.value
-
-    for (let index = 0; index < lis.length; index++) {
-
-        lis[index].classList.add("d-none")
-        const labelContent = label[index].textContent
-
-        if (labelContent.toLowerCase().includes(inputFilterValue.toLowerCase())){
-
-            lis[index].classList.remove("d-none")
-
-            label[index].innerHTML = labelContent.replace(new RegExp(`${inputFilterValue}`,"gi"),(match) => {
-                return `<strong>${match}</strong>`
-
-            })
-        }
-
-    }
- 
+inputFilter.addEventListener('input', () => {
+   searchItem()
 }) 
 
 function newItem(text){
@@ -87,7 +67,31 @@ function registerItem() {
 
         });
 }
+    searchItem()
 
+}
+
+function searchItem(){
+    const lis = document.getElementsByClassName('item-todo')
+    const label = document.getElementsByClassName("content")
+    const inputFilterValue = inputFilter.value
+
+    for (let index = 0; index < lis.length; index++) {
+
+        lis[index].classList.add("d-none")
+        const labelContent = label[index].textContent
+
+        if (labelContent.toLowerCase().includes(inputFilterValue.toLowerCase())){
+
+            lis[index].classList.remove("d-none")
+
+            label[index].innerHTML = labelContent.replace(new RegExp(`${inputFilterValue}`,"gi"),(match) => {
+                return `<strong>${match}</strong>`
+
+            })
+        }
+
+    }
 }
 
 taskInputField.addEventListener('keypress', function(event){
