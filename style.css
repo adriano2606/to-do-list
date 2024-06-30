@@ -1,4 +1,4 @@
-.deleteIcon:hover{
+.deleteIcon:hover, .editIcon:hover{
     color: red;
     cursor: pointer;
 }
@@ -8,9 +8,16 @@ li:hover, li div label{
     filter: brightness(90%);
 }
 
-.deleteIcon{
+.deleteIcon, .editIcon{
     position: absolute;
+}
+
+.deleteIcon{
     right: 20px;
+}
+
+.editIcon{
+    right: 50px;
 }
 
 .bg-my-dark {

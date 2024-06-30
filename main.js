@@ -3,8 +3,6 @@ const taskAddButton = document.getElementById('taskAddButton')
 const inputFilter = document.getElementById("inputFilter")
 const clearButton = document.getElementById("clearButton")
 
-console.log(clearButton);
-
 inputFilter.addEventListener('input', () => {
    searchItem()
 }) 
@@ -16,6 +14,7 @@ function newItem(text){
         <input class="form-check-input" type="checkbox">
         <label class="content form-check-label text-break ps-3 pe-5 task-description">${text}</label>
         <i class="fa-solid fa-trash deleteIcon"></i>
+        <i class="fa-solid fa-pen-to-square editIcon"></i>
       </div>
     </li>
 
