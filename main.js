@@ -1,6 +1,9 @@
 const taskInputField = document.getElementById('taskInput')
 const taskAddButton = document.getElementById('taskAddButton')
 const inputFilter = document.getElementById("inputFilter")
+const clearButton = document.getElementById("clearButton")
+
+console.log(clearButton);
 
 inputFilter.addEventListener('input', () => {
    searchItem()
@@ -97,6 +100,16 @@ function searchItem(){
 taskInputField.addEventListener('keypress', function(event){
     if (event.key == 'Enter'){
         registerItem()
+    }
+})
+
+clearButton.addEventListener("click", () => {
+    inputFilter.value = ''
+    const lis = document.getElementsByClassName('item-todo')
+
+    for (let index = 0; index < lis.length; index++) {
+
+        lis[index].classList.remove("d-none")
     }
 })
 
