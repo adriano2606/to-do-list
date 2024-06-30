@@ -2,7 +2,7 @@ const taskInputField = document.getElementById('taskInput')
 const taskAddButton = document.getElementById('taskAddButton')
 const inputFilter = document.getElementById("inputFilter")
 
-inputFilter.addEventListener('input', () => {
+inputFilter.addEventListener('input', (e) => {
     const lis = document.getElementsByClassName('item-todo')
     const label = document.getElementsByClassName("content")
     const inputFilterValue = inputFilter.value
@@ -28,7 +28,7 @@ inputFilter.addEventListener('input', () => {
 
 function newItem(text){
     return `
-    <li class=" item-todo list-group-item bg-my-dark d-flex align-items-center px-3 position-relative">
+    <li class=" item-todo list-group-item bg-my-dark d-flex align-items-center px-3 mb-3 mb-md-2 position-relative">
       <div class="d-flex align-items-center ms-2">
         <input class="form-check-input" type="checkbox">
         <label class="content form-check-label text-break ps-3 pe-5 task-description">${text}</label>

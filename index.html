@@ -16,14 +16,17 @@
           
           <h1 class="text-light">To-do List</h1>
           
-          <div class="input-group mb-5 px-lg-5">
+          <div class="input-group mb-3 px-lg-5">
             <input type="text" class="form-control" placeholder="Type your task" aria-label="Recipient's username" aria-describedby="button-addon2" id="taskInput">
             <button class="btn btn-outline-secondary" type="button" id="taskAddButton">Add</button>
           </div>
 
-          <input type="text" id="inputFilter">
+          <div class="d-flex mb-5 d-flex flex-column w-100 px-lg-5">
+            <label for="inputFilter" class="text-light">Search by task name:</label>
+            <input class="form-control me-2 w-25 bg-my-grey" type="search" placeholder="Search task" aria-label="Search" id="inputFilter">
+          </div>
 
-          <ol class="list-group list-group-numbered w-50 text-light" id="taskList">
+          <ol class="list-group list-group-numbered w-100 px-lg-5 text-light" id="taskList">
           </ol>
 
         </div>
