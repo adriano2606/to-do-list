@@ -33,44 +33,51 @@ function registerItem() {
         
      } else {
         addItem()
-        let thrashIcon = Array.from(document.querySelectorAll('.deleteIcon'))
-
-        thrashIcon.forEach((element, index) => {
-            element.onclick = () => {
-                let elementParent = thrashIcon[index].parentElement
-                let divParentElement = elementParent.parentElement
-                divParentElement.remove()
-            }
-        })
-
+        deleteItem()
+        markCheckbox()
         taskInputField.value = ''
-
-        let taskCheckBoxes = Array.from(document.querySelectorAll('.form-check-input'))
-        taskCheckBoxes.forEach((element) => {
-
-            element.onclick = () => {
-                element.toggleAttribute('checked')
-
-                const parent = element.parentElement
-                const parenLi = parent.parentElement
-                const taskDescription = parent.querySelector('.task-description')
-
-                if (element.checked == true){
-                    taskDescription.classList.toggle('text-decoration-line-through')
-                    parenLi.classList.toggle('bg-success')
-                    parenLi.classList.toggle('text-light')  
-
-                } else {
-                    taskDescription.classList.toggle('text-decoration-line-through')
-                    parenLi.classList.toggle('bg-success')
-                    parenLi.classList.toggle('text-light')  
-                }
-            }
-
-        });
-}
+    }
+    
     searchItem()
 
+}
+
+function deleteItem(){
+    let thrashIcon = Array.from(document.querySelectorAll('.deleteIcon'))
+
+    thrashIcon.forEach((element, index) => {
+        element.onclick = () => {
+            let elementParent = thrashIcon[index].parentElement
+            let divParentElement = elementParent.parentElement
+            divParentElement.remove()
+        }
+    })
+}
+
+function markCheckbox(){
+    let taskCheckBoxes = Array.from(document.querySelectorAll('.form-check-input'))
+    taskCheckBoxes.forEach((element) => {
+
+        element.onclick = () => {
+            element.toggleAttribute('checked')
+
+            const parent = element.parentElement
+            const parenLi = parent.parentElement
+            const taskDescription = parent.querySelector('.task-description')
+
+            if (element.checked == true){
+                taskDescription.classList.toggle('text-decoration-line-through')
+                parenLi.classList.toggle('bg-success')
+                parenLi.classList.toggle('text-light')  
+
+            } else {
+                taskDescription.classList.toggle('text-decoration-line-through')
+                parenLi.classList.toggle('bg-success')
+                parenLi.classList.toggle('text-light')  
+            }
+        }
+
+    });
 }
 
 function searchItem(){
