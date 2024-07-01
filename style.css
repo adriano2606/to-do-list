@@ -1,6 +1,14 @@
 .deleteIcon:hover, .editIcon:hover{
     color: red;
     cursor: pointer;
+    transform: scale(1.4);
+    transition: .1s;
+}
+
+.confirmIcon:hover{
+    color: green;
+    transform: scale(1.4);
+    transition: .1s;
 }
 
 li:hover, li div label{
@@ -8,7 +16,7 @@ li:hover, li div label{
     filter: brightness(90%);
 }
 
-.deleteIcon, .editIcon{
+.deleteIcon, .editIcon, .confirmIcon{
     position: absolute;
 }
 
@@ -16,7 +24,7 @@ li:hover, li div label{
     right: 20px;
 }
 
-.editIcon{
+.editIcon, .confirmIcon{
     right: 50px;
 }
 

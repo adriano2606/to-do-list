@@ -15,6 +15,7 @@ function newItem(text){
         <label class="content form-check-label text-break ps-3 pe-5 task-description">${text}</label>
         <i class="fa-solid fa-trash deleteIcon"></i>
         <i class="fa-solid fa-pen-to-square editIcon"></i>
+        <i class="fa-solid fa-check confirmIcon d-none"></i>
       </div>
     </li>
 
@@ -35,6 +36,7 @@ function registerItem() {
         addItem()
         deleteItem()
         markCheckbox()
+        editItem()
         taskInputField.value = ''
     }
     
@@ -52,6 +54,30 @@ function deleteItem(){
             divParentElement.remove()
         }
     })
+}
+
+function editItem(){
+    let editIcons = Array.from(document.getElementsByClassName("editIcon"))
+
+    editIcons.forEach(element => {
+        element.onclick = () => {
+            let parent = element.parentElement
+            let confirmIcon = parent.getElementsByClassName("confirmIcon")[0]
+            let label = parent.getElementsByClassName("content")[0]
+            element.classList.add("d-none")
+            confirmIcon.classList.remove("d-none")
+            let content = label.textContent
+            label.innerHTML = `<input value='${content}'>` 
+
+            confirmIcon.onclick = () => {
+                confirmIcon.classList.add("d-none")
+                element.classList.remove("d-none")
+                content = label.getElementsByTagName("input")[0].value
+                label.innerHTML = content
+            }
+        }
+    });
+
 }
 
 function markCheckbox(){
